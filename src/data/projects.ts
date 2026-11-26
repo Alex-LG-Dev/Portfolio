@@ -7,9 +7,9 @@ export const projects: Project[] = [
   {
     "id": "pillsense",
     "name": "PillSense",
-    "kind": "Proyecto IoT · Uni",
+    "kind": "Proyecto IoT · UPV",
     "stack": "ESP32 · M5Stack · MQTT · Android · Firebase",
-    "text": "Pastillero inteligente hecho en grupo en la uni: caja con ESP32, base M5Stack, pasarela MQTT en Raspberry Pi y app Android en Java con Firebase.",
+    "text": "Pastillero inteligente hecho en grupo en la UPV: caja con ESP32, base M5Stack, pasarela MQTT en Raspberry Pi y app Android en Java con Firebase.",
     "slides": [
       {
         "src": "pill-aviso.webp",
@@ -36,9 +36,9 @@ export const projects: Project[] = [
   {
     "id": "hades",
     "name": "Hades Journey",
-    "kind": "Videojuego · Uni",
+    "kind": "Videojuego · UPV",
     "stack": "Unity · 3ds Max · Low poly · WebGL",
-    "text": "Acción 3D isométrica en el inframundo griego, en Unity y 3ds Max, low poly. Hecho en grupo en la uni, en cinco sprints. Mi parte incluye modelos y materiales del escenario y arreglos del HUD.",
+    "text": "Acción 3D isométrica en el inframundo griego, en Unity y 3ds Max, low poly. Hecho en grupo en la UPV, en cinco sprints. Mi parte incluye modelos y materiales del escenario y arreglos del HUD.",
     "slides": [
       {
         "src": "hades-juego.webp",
@@ -78,9 +78,9 @@ export const projects: Project[] = [
   {
     "id": "proyecto",
     "name": "Web GTI + PROA",
-    "kind": "Primer curso · Uni",
+    "kind": "Primer curso · UPV",
     "stack": "PHP · MySQL · HTML · CSS · JS",
-    "text": "Hecho en grupo en la uni, en PHP y MySQL: la web del grado y el campus virtual PROA con asignaturas, tareas, calendario y notas para alumnos y profesores. 26 historias de usuario.",
+    "text": "Hecho en grupo en la UPV, en PHP y MySQL: la web del grado y el campus virtual PROA con asignaturas, tareas, calendario y notas para alumnos y profesores. 26 historias de usuario.",
     "slides": [
       {
         "src": "gti-inicio.webp",
@@ -127,7 +127,7 @@ export const projects: Project[] = [
   {
     "id": "tapiceria",
     "name": "Tapicería Elvira",
-    "kind": "Diseño UX · Uni",
+    "kind": "Diseño UX · UPV",
     "stack": "Entrevistas · Personas · Figma · Heurística",
     "text": "Asignatura de UX: la web de un almacén de telas de Gandia. Entrevista, 6 personas, mapas de usuario, flujos, wireframes, prototipo en Figma y evaluación heurística.",
     "slides": [

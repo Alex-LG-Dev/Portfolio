@@ -4,7 +4,7 @@ import ProjectSpread from "./ProjectSpread.astro";
 ---
 <section class="sec" id="proyectos" aria-labelledby="t-proy">
     <div class="wrap">
-      <div class="sec__head"><h2 id="t-proy">Proyectos de<br>la uni y propios</h2><p class="sec__lead">Capturas reales de cada uno, impresas en morado. Pásales el ratón por encima y salen a color. <a href="https://github.com/Alex-LG-Dev" rel="noopener">Mi código en GitHub</a>.</p></div>
+      <div class="sec__head"><h2 id="t-proy">Proyectos de<br>la UPV y propios</h2><p class="sec__lead">Capturas reales de cada uno, impresas en morado. Pásales el ratón por encima y salen a color. <a href="https://github.com/Alex-LG-Dev" rel="noopener">Mi código en GitHub</a>.</p></div>
       <div class="spreads">
         {projects.map((p, i) => <ProjectSpread project={p} flip={i % 2 === 1} />)}
       </div>

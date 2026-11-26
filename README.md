@@ -33,5 +33,5 @@ La primera vez, en el repositorio: Settings → Pages → Source: GitHub Actions
 
 ## Reglas del contenido
 
-- En los proyectos de la uni se dice "hecho en grupo en la uni", sin número de miembros.
+- En los proyectos de la UPV se dice "hecho en grupo en la UPV", sin número de miembros.
 - Nunca publicar datos de contacto de clientes (Tapicería Elvira) ni credenciales de las memorias.
