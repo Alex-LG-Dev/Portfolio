@@ -1,5 +1,7 @@
 # Portfolio de Alex López Gea
 
+En línea: https://alex-lg-dev.github.io/Portfolio/
+
 Fanzine impreso en risografía: tintas roja y morada sobre papel. Hecho con [Astro](https://astro.build).
 
 ## Arrancar
