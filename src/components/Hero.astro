@@ -1,0 +1,20 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+---
+<section class="hero" aria-labelledby="t-hero">
+    <div class="wrap">
+      <div>
+        <h1 id="t-hero"><span class="ink2" data-t="Aprendo a aprender.">Aprendo a aprender.</span><span class="ink2 l2" data-t="Luego lo construyo.">Luego lo construyo.</span></h1>
+        <p class="hero__who"><b>Alex López Gea.</b> Estudio Tecnologías Interactivas en la UPV, campus de Gandia. Hago apps, webs, IoT y videojuegos, en equipo y con la IA como herramienta.</p>
+        <div class="hero__act">
+          <a class="btn" href="#proyectos">Ver proyectos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+          <a class="btn btn--line" href="https://github.com/Alex-LG-Dev" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="sheets">
+        <a class="sheet" href="#p-hades"><div class="duo"><img src={`${base}img/hades-juego.webp`} alt="Hades Journey: Alástor en el Tártaro" width="1200" height="760" fetchpriority="high"></div><figcaption>Hades Journey</figcaption></a>
+        <a class="sheet" href="#p-pillsense"><div class="duo"><img src={`${base}img/pill-cuidador.webp`} alt="PillSense: app del cuidador" width="1200" height="760"></div><figcaption>PillSense</figcaption></a>
+        <a class="sheet" href="#p-tapiceria"><div class="duo"><img src={`${base}img/tap-inicio.webp`} alt="Tapicería Elvira: portada del prototipo" width="1200" height="760"></div><figcaption>Tapicería Elvira</figcaption></a>
+      </div>
+    </div>
+  </section>

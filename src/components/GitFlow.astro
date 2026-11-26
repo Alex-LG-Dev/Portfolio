@@ -1,0 +1,50 @@
+---
+// Diagrama GitFlow dibujado a mano en SVG: las líneas siempre se ven enteras.
+---
+<figure class="gf" id="gitflow" aria-labelledby="gf-cap">
+        <figcaption class="gf__cap" id="gf-cap"><span><b>Así uso GitFlow.</b> Toca una rama para seguirla.</span>
+          <span class="gf__keys" role="group" aria-label="Resaltar rama">
+            <button type="button" class="gf__key" data-k="main" aria-pressed="false">main</button><button type="button" class="gf__key" data-k="develop" aria-pressed="false">develop</button><button type="button" class="gf__key" data-k="feature" aria-pressed="false">feature</button><button type="button" class="gf__key" data-k="release" aria-pressed="false">release</button><button type="button" class="gf__key" data-k="hotfix" aria-pressed="false">hotfix</button>
+          </span>
+        </figcaption>
+        <div class="gf__scroll">
+        <svg viewBox="0 0 960 300" role="img" aria-label="Diagrama GitFlow: develop sale de main; una rama feature se integra en develop; de develop sale release 1.0, que entra en main como v1.0 y vuelve a develop; un hotfix sale de main, entra como v1.0.1 y vuelve a develop.">
+          <g class="lane" data-l="main"><text class="lbl" x="0" y="55">main</text><path d="M120 50H940" stroke="#4b3576"/></g>
+          <g class="lane" data-l="hotfix"><text class="lbl" x="0" y="105">hotfix</text>
+            <path d="M600 50C625 50 615 100 640 100H660C690 100 690 50 720 50" stroke="#f15060"/>
+            <path d="M660 100C700 100 730 200 770 200" stroke="#f15060"/>
+            <circle cx="655" cy="100" r="8" stroke="#f15060"/></g>
+          <g class="lane" data-l="release"><text class="lbl" x="0" y="155">release</text>
+            <path d="M450 200C480 200 470 150 500 150H515C540 150 535 50 560 50" stroke="#765ba7"/>
+            <path d="M515 150C550 150 570 200 600 200" stroke="#765ba7"/>
+            <circle cx="505" cy="150" r="8" stroke="#765ba7"/></g>
+          <g class="lane" data-l="develop"><text class="lbl" x="0" y="205">develop</text>
+            <path d="M160 50C190 50 185 200 215 200H940" stroke="#765ba7"/>
+            <circle cx="250" cy="200" r="8" stroke="#765ba7"/><circle cx="420" cy="200" r="8" stroke="#765ba7"/><circle cx="600" cy="200" r="8" stroke="#765ba7"/><circle cx="770" cy="200" r="8" stroke="#765ba7"/><circle cx="880" cy="200" r="8" stroke="#765ba7"/></g>
+          <g class="lane" data-l="feature"><text class="lbl" x="0" y="255">feature</text>
+            <path d="M270 200C300 200 290 250 320 250H370C400 250 395 200 420 200" stroke="#f15060"/>
+            <circle cx="320" cy="250" r="8" stroke="#f15060"/><circle cx="368" cy="250" r="8" stroke="#f15060"/>
+            <text x="300" y="285">H004</text></g>
+          <g class="lane" data-l="main hotfix release"><circle cx="160" cy="50" r="8" stroke="#4b3576"/><circle cx="560" cy="50" r="8" stroke="#4b3576"/><circle cx="720" cy="50" r="8" stroke="#4b3576"/>
+            <rect class="tagbg" x="534" y="14" width="52" height="22" rx="11"/><text class="tag" x="543" y="30">v1.0</text>
+            <rect class="tagbg" x="686" y="14" width="68" height="22" rx="11"/><text class="tag" x="694" y="30">v1.0.1</text></g>
+        </svg>
+        </div>
+      </figure>
+
+<script>
+// gitflow
+const gf = document.getElementById('gitflow')!, keys = [...gf.querySelectorAll<HTMLButtonElement>('.gf__key')];
+let pinned: string | null = null;
+const hl = (k: string | null | undefined) => { if (k) gf.dataset.hl = k; else delete gf.dataset.hl; };
+keys.forEach(b => {
+  b.addEventListener('click', () => { pinned = pinned === b.dataset.k ? null : (b.dataset.k ?? null); keys.forEach(x => x.setAttribute('aria-pressed', String(x.dataset.k === pinned))); hl(pinned); });
+  b.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hl(b.dataset.k); });
+  b.addEventListener('pointerleave', () => hl(pinned));
+});
+gf.querySelectorAll<SVGGElement>('.lane').forEach(g => {
+  const k = (g.dataset.l ?? '').split(' ')[0];
+  g.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hl(k); });
+  g.addEventListener('pointerleave', () => hl(pinned));
+});
+</script>

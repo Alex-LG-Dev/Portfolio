@@ -1,0 +1,24 @@
+---
+import type { Project } from "../data/projects";
+import Carousel from "./Carousel.astro";
+interface Props { project: Project; flip?: boolean }
+const { project: p, flip = false } = Astro.props;
+---
+<article class:list={["spread", { "spread--flip": flip }]} id={`p-${p.id}`}>
+  {p.slides.length > 0 ? (
+    <Carousel slides={p.slides} label={p.name} />
+  ) : (
+    <div class="print print--wip" role="img" aria-label={`${p.name}: capturas en camino`}>
+      <p class="wip" aria-hidden="true"><span>IN</span><span>PROGRESS</span></p>
+      <p class="wip__note" aria-hidden="true">capturas en camino</p>
+    </div>
+  )}
+  <div class="spread__txt">
+    <h3>{p.name}</h3>
+    <p class="spread__p">{p.text}</p>
+    <dl class="spread__meta">
+      <div><dt>Qué es</dt><dd>{p.kind}</dd></div>
+      <div><dt>Con qué</dt><dd>{p.stack}</dd></div>
+    </dl>
+  </div>
+</article>

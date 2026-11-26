@@ -1,0 +1,31 @@
+---
+import GitFlow from "./GitFlow.astro";
+---
+<section class="sec" id="ideas" aria-labelledby="t-ideas">
+    <div class="wrap">
+      <div class="sec__head"><h2 id="t-ideas">Tres ideas con<br>las que trabajo</h2><p class="sec__lead">Lo que me llevo de cada proyecto, más allá de la tecnología del momento.</p></div>
+      <div class="ideas">
+        <div class="idea">
+          <h3>Aprender a aprender</h3>
+          <p>Las herramientas cambian cada año. Lo que se queda es saber aprender rápido una nueva: Android, Angular, Figma o lo que venga.</p>
+          <ul class="stack-list" aria-label="Lo que he ido aprendiendo"><li>HTML, CSS, JS, Figma, UX</li><li>Angular, TypeScript, AdonisJS</li><li>Android, Java, Firebase, MQTT</li><li>Unity, 3ds Max</li><li>Lo siguiente que haga falta</li></ul>
+        </div>
+        <div class="idea">
+          <h3>IA, pero bien usada</h3>
+          <p>Soy partidario de usar la inteligencia artificial. Bien usada: entender lo que propone, revisarlo y saber cuándo no hace falta.</p>
+          <ul aria-label="Mis reglas con la IA">
+            <li class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Entiendo lo que genera</li>
+            <li class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Lo reviso y lo pruebo</li>
+            <li class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>La uso para aprender más rápido</li>
+            <li class="ko"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Copiar sin pensar</li>
+          </ul>
+        </div>
+        <div class="idea">
+          <h3>En equipo, con método</h3>
+          <p>Historias de usuario y sprints en Trello. En GitHub trabajo con GitFlow: main siempre estable, develop para integrar y una rama por feature, release o hotfix.</p>
+        </div>
+      </div>
+
+      <GitFlow />
+    </div>
+  </section>
