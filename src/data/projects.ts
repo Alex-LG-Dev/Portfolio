@@ -168,12 +168,17 @@ export const projects: Project[] = [
     "name": "Este portfolio",
     "kind": "IA bien usada",
     "stack": "Diseño · Astro · CSS · Playwright · IA",
-    "text": "Lo he hecho con IA como herramienta: tres versiones, mis colores y mi criterio decidiendo, y pruebas en navegador en móvil y escritorio.",
+    "text": "Lo he hecho con IA como herramienta: cuatro versiones, mis colores y mi criterio decidiendo, y pruebas en navegador en móvil y escritorio.",
     "slides": [
+      {
+        "src": "pf-v4.webp",
+        "alt": "Portada de este portfolio en estilo fanzine riso, con el titular en tintas roja y morada y capturas de proyectos",
+        "caption": "v4, la de ahora"
+      },
       {
         "src": "pf-v3.webp",
         "alt": "Portada de este portfolio en estilo retro con terminal",
-        "caption": "v3, la de ahora"
+        "caption": "v3, retro con terminal"
       },
       {
         "src": "pf-v2.webp",
