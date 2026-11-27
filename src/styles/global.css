@@ -276,3 +276,51 @@ p { text-wrap: pretty; }
 .about__bio { margin-top: 28px; }
 .skip { position: absolute; left: -9999px; }
 .skip:focus { left: 16px; top: 12px; z-index: 60; background: var(--paper); padding: 8px 12px; }
+
+/* enlace a la página de cada proyecto */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.more { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; font-weight: 700; text-decoration: none; padding: 6px 0;
+  background: linear-gradient(var(--red), var(--red)) 0 100% / 100% 2px no-repeat; transition: background-size 220ms var(--ease-out); }
+.more svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform 220ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .more:hover { background-size: 100% 100%; color: var(--ink); } .more:hover svg { transform: translateX(4px); } }
+
+/* página de proyecto */
+.case__head { padding: clamp(40px, 6vw, 80px) 0 clamp(36px, 5vw, 56px); }
+.back { display: inline-flex; align-items: center; gap: 6px; font: 400 13px/1 var(--mono); text-decoration: none; padding: 10px 0; color: var(--ink-2); }
+.back svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform 200ms var(--ease-out); }
+.back:hover { color: var(--ink); } .back:hover svg { transform: translateX(-3px); }
+.case h1 { margin-top: clamp(20px, 3vw, 36px); font-weight: 900; font-size: clamp(3rem, 10vw, 6rem); line-height: .9; letter-spacing: -.04em; }
+.case__lead { margin: 24px 0 0; max-width: 52ch; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.5; color: var(--ink-2); }
+.case__meta { max-width: 720px; }
+.case__meta div { grid-template-columns: 96px 1fr; }
+.case__media { padding-bottom: clamp(64px, 9vw, 120px); border-bottom: 1.5px solid var(--ink); }
+.case__media .print { max-width: 1040px; }
+.case__body { display: grid; }
+.case__sec { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(20px, 4vw, 64px); padding: clamp(56px, 8vw, 104px) 0; border-bottom: 1.5px solid var(--rule); }
+.case__sec:last-child { border-bottom: 0; }
+.case__sec h2 { font-weight: 900; font-size: clamp(2rem, 4vw, 3.2rem); line-height: .95; letter-spacing: -.035em; color: var(--purple-deep); }
+.case__big { margin: 0; max-width: 34em; font-size: clamp(19px, 2vw, 24px); line-height: 1.5; }
+.case__sec--origin { margin: clamp(40px, 6vw, 72px) 0 clamp(56px, 8vw, 104px); padding: clamp(32px, 5vw, 64px); border: 1.5px solid var(--ink); background-color: var(--paper-2);
+  background-image: radial-gradient(circle at center, color-mix(in oklab, var(--purple) 18%, transparent) 1px, transparent 1.6px); background-size: 7px 7px; }
+.case__sec--origin:last-child { border-bottom: 1.5px solid var(--ink); }
+.why { margin: 0; padding: 0; list-style: none; display: grid; border-top: 1.5px solid var(--ink); }
+.why li { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 8px 32px; padding: 22px 0; border-bottom: 1.5px solid var(--rule); }
+.why h3 { font-size: 20px; font-weight: 800; line-height: 1.25; letter-spacing: -.01em; }
+.why h3::before { content: ""; display: inline-block; width: .55em; height: .55em; margin-right: .45em; border-radius: 50%; background: var(--red); vertical-align: .08em; }
+.why p { margin: 0; color: var(--ink-2); max-width: 46ch; }
+.case__next { display: grid; grid-template-columns: 1fr 1fr; border-top: 1.5px solid var(--ink); }
+.case__nav { display: grid; gap: 8px; padding: clamp(32px, 5vw, 56px) 0; text-decoration: none; }
+.case__nav--next { text-align: right; border-left: 1.5px solid var(--ink); padding-left: 24px; }
+.case__nav--prev { padding-right: 24px; }
+.case__nav .mono { color: var(--red-text); }
+.case__nav b { font-weight: 900; font-size: clamp(1.6rem, 3.6vw, 2.8rem); line-height: 1; letter-spacing: -.03em; transition: color 160ms ease; }
+@media (hover: hover) and (pointer: fine) { .case__nav:hover b { color: var(--purple-deep); } }
+@media (max-width: 860px) {
+  .case__sec, .why li { grid-template-columns: 1fr; }
+  .case__next { grid-template-columns: 1fr; }
+  .case__nav--next { text-align: left; border-left: 0; border-top: 1.5px solid var(--rule); padding-left: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .case h1 .ink2 { animation: rise 700ms var(--ease-out) both; }
+  .case h1 .ink2::after { animation: register 900ms var(--ease-out) 120ms both; }
+}

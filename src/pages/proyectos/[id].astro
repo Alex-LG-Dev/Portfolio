@@ -1,0 +1,73 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Carousel from "../../components/Carousel.astro";
+import Contact from "../../components/Contact.astro";
+import { projects, type Project } from "../../data/projects";
+
+export function getStaticPaths() {
+  return projects.map((p, i) => ({
+    params: { id: p.id },
+    props: { p, next: projects[(i + 1) % projects.length], prev: projects[(i - 1 + projects.length) % projects.length] },
+  }));
+}
+interface Props { p: Project; next: Project; prev: Project }
+const { p, next, prev } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+---
+<Base title={`${p.name} · Alex López Gea`} description={p.problem}>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <Header />
+  <main id="contenido" class="case">
+    <section class="case__head">
+      <div class="wrap">
+        <a class="back" href={`${base}#p-${p.id}`}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>Todos los proyectos</a>
+        <h1><span class="ink2" data-t={p.name}>{p.name}</span></h1>
+        <p class="case__lead">{p.text}</p>
+        <dl class="spread__meta case__meta">
+          <div><dt>Qué es</dt><dd>{p.kind}</dd></div>
+          <div><dt>Con qué</dt><dd>{p.stack}</dd></div>
+          {p.role && <div><dt>Mi parte</dt><dd>{p.role}</dd></div>}
+        </dl>
+      </div>
+    </section>
+
+    <div class="wrap case__media">
+      {p.slides.length > 0 ? (
+        <Carousel slides={p.slides} label={p.name} />
+      ) : (
+        <div class="print print--wip" role="img" aria-label={`${p.name}: capturas en camino`}>
+          <p class="wip" aria-hidden="true"><span>IN</span><span>PROGRESS</span></p>
+          <p class="wip__note" aria-hidden="true">capturas en camino</p>
+        </div>
+      )}
+    </div>
+
+    <div class="wrap case__body">
+      <section class="case__sec" aria-labelledby="t-problema">
+        <h2 id="t-problema">Qué problema resuelve</h2>
+        <p class="case__big">{p.problem}</p>
+      </section>
+
+      <section class="case__sec" aria-labelledby="t-porque">
+        <h2 id="t-porque">Por qué está hecho así</h2>
+        <ul class="why">
+          {p.why.map((w) => (
+            <li><h3>{w.d}</h3><p>{w.r}</p></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="case__sec case__sec--origin" aria-labelledby="t-idea">
+        <h2 id="t-idea">De dónde salió la idea</h2>
+        <p class="case__big">{p.origin}</p>
+      </section>
+    </div>
+
+    <nav class="wrap case__next" aria-label="Otros proyectos">
+      <a href={`${base}proyectos/${prev.id}/`} class="case__nav case__nav--prev"><span class="mono">Anterior</span><b>{prev.name}</b></a>
+      <a href={`${base}proyectos/${next.id}/`} class="case__nav case__nav--next"><span class="mono">Siguiente</span><b>{next.name}</b></a>
+    </nav>
+  </main>
+  <Contact />
+</Base>

@@ -3,6 +3,7 @@ import type { Project } from "../data/projects";
 import Carousel from "./Carousel.astro";
 interface Props { project: Project; flip?: boolean }
 const { project: p, flip = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 ---
 <article class:list={["spread", { "spread--flip": flip }]} id={`p-${p.id}`}>
   {p.slides.length > 0 ? (
@@ -20,5 +21,6 @@ const { project: p, flip = false } = Astro.props;
       <div><dt>Qué es</dt><dd>{p.kind}</dd></div>
       <div><dt>Con qué</dt><dd>{p.stack}</dd></div>
     </dl>
+    <a class="more" href={`${base}proyectos/${p.id}/`}>Cómo y por qué lo hice<span class="sr"> ({p.name})</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
   </div>
 </article>

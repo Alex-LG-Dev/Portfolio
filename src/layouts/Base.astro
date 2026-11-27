@@ -1,14 +1,19 @@
 ---
 import "../styles/global.css";
 const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+interface Props { title?: string; description?: string }
+const {
+  title = "Alex López Gea · Aprendo a aprender",
+  description = "Portfolio de Alex López Gea, estudiante de Tecnologías Interactivas en la UPV de Gandia: IoT, videojuegos, web y diseño UX.",
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alex López Gea · Aprendo a aprender</title>
-<meta name="description" content="Portfolio de Alex López Gea, estudiante de Tecnologías Interactivas en la UPV de Gandia: IoT, videojuegos, web y diseño UX.">
+<title>{title}</title>
+<meta name="description" content={description}>
 <meta name="theme-color" content="#f2ece2">
 <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml">
 </head>
