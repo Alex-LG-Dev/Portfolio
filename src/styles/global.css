@@ -324,3 +324,26 @@ p { text-wrap: pretty; }
   .case h1 .ink2 { animation: rise 700ms var(--ease-out) both; }
   .case h1 .ink2::after { animation: register 900ms var(--ease-out) 120ms both; }
 }
+
+/* capturas en grande */
+.car__zoom { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.car__zoom:focus-visible { outline-offset: -4px; outline-color: var(--paper); }
+.car__hint { position: absolute; right: 10px; top: 10px; z-index: 2; display: grid; place-items: center; width: 32px; height: 32px; background: var(--paper); color: var(--ink); pointer-events: none; }
+.car__hint svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.lb { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: #120a18; color: var(--paper);
+  opacity: 1; transition: opacity 200ms var(--ease-out), display 200ms allow-discrete, overlay 200ms allow-discrete; }
+.lb::backdrop { background: transparent; }
+.lb:not([open]) { opacity: 0; }
+@starting-style { .lb[open] { opacity: 0; } .lb[open] .lb__track { transform: scale(.96); } }
+.lb__track { display: flex; height: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior: contain; transition: transform 240ms var(--ease-out); }
+.lb__track::-webkit-scrollbar { display: none; }
+.lb__slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; display: grid; place-items: center; align-content: center; gap: 12px; padding: 64px clamp(8px, 4vw, 72px) 96px; }
+.lb__slide img { max-width: 100%; max-height: calc(100dvh - 190px); width: auto; height: auto; object-fit: contain; box-shadow: 0 24px 60px -24px rgb(0 0 0 / .8); }
+.lb__slide figcaption { font: 400 13px/1.4 var(--mono); padding: 6px 10px; background: var(--paper); color: var(--ink); }
+.lb__bar { position: fixed; left: 50%; bottom: 20px; translate: -50% 0; display: flex; align-items: center; gap: 16px; }
+.lb__count { min-width: 5ch; text-align: center; }
+.lb__close { position: fixed; right: 16px; top: 16px; }
+.lb .car__btn { background: var(--paper); border-color: var(--paper); }
+@media (hover: hover) and (pointer: fine) { .lb .car__btn:hover { background: var(--red); border-color: var(--red); color: var(--ink); } }
+html.lb-open { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { .lb, .lb__track { transition: none; } }
