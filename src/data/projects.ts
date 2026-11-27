@@ -42,7 +42,7 @@ export const projects: Project[] = [
       }
     ],
     "problem": "Una persona mayor o con un tratamiento largo se olvida de una toma, no recuerda si ya ha abierto el pastillero o se toma dos veces la misma pastilla. Y quien le cuida no se entera hasta que ya ha pasado. PillSense avisa a la hora de cada toma, comprueba que se ha abierto el cajón que toca y le cuenta al cuidador cómo va el día.",
-    "origin": "Salió de una lluvia de ideas en la asignatura de Proyecto IoT y Aplicaciones Móviles de la UPV. El pastillero tenía un problema claro y dos usuarios muy distintos: el paciente y quien le cuida. La primera versión quería hacerlo todo (fotos, QR, sensores de temperatura, huella…). Pasamos la idea por un análisis de riesgos con IA y nos quedamos con lo que de verdad importa: avisar, confirmar la toma y tener al cuidador al tanto.",
+    "origin": "La idea la trajo un compañero: todos tenemos personas mayores cerca que toman varias pastillas al día y no siempre se acuerdan. Le dimos forma en la asignatura de Proyecto IoT y Aplicaciones Móviles de la UPV. La primera versión quería hacerlo todo (fotos, QR, sensores de temperatura, huella…). Pasamos la idea por un análisis de riesgos con IA y nos quedamos con lo que de verdad importa: avisar, confirmar la toma y tener al cuidador al tanto.",
     "why": [
       {
         "d": "Dos apps: paciente y cuidador",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
       }
     ],
     "problem": "Es un juego, así que el reto era de diseño: un combate rápido y justo en vista isométrica, donde los enemigos te rodean, con un motivo para seguir bajando. Y que en cinco sprints diera para algo que se pueda jugar en el navegador.",
-    "origin": "Nació en una lluvia de ideas en Aplicaciones Multimedia (Videojuegos) de la UPV. Queríamos «lore oscuro con diseño cute», mirando a juegos como Cult of the Lamb o Death's Door: alguien que baja al infierno a recuperar el alma de un ser querido, acompañado por su fantasma. Empezó en los siete infiernos de Dante y acabó en el inframundo griego, con Alástor, el Tártaro y un mercader de almas.",
+    "origin": "Nació en una lluvia de ideas en Aplicaciones Multimedia (Videojuegos) de la UPV. Queríamos una aventura con una historia que emocionara, mirando a juegos como Cult of the Lamb o Death's Door: alguien que baja al infierno a recuperar el alma de un ser querido, acompañado por su fantasma. Empezó en los siete infiernos de Dante y acabó en el inframundo griego, con Alástor, el Tártaro y un mercader de almas.",
     "why": [
       {
         "d": "Vista isométrica y low poly",
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     "text": "En marcha: web para fans de Pokémon con Pokédex y creador de equipos compatible con Pokémon Showdown. Ya tiene el esqueleto en Angular y AdonisJS.",
     "slides": [],
     "problem": "Para montar un equipo de Pokémon acabas saltando entre la Pokédex, tus notas y Pokémon Showdown. ShareDex junta una Pokédex y un creador de equipos que importa y exporta en el formato de Showdown, para que tu equipo funcione donde ya juegas.",
-    "origin": "Es mi proyecto propio, fuera de la UPV. PENDIENTE: cuéntame de dónde salió.",
+    "origin": "Es mi proyecto propio, fuera de la UPV: algo que me apetecía tener como fan de Pokémon y que construyo por mi cuenta.",
     "why": [
       {
         "d": "Angular y AdonisJS",
